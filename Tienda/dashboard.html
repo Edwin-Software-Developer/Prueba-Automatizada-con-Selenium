@@ -2,52 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>ECommerce - Marketplace y Gestión</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>ECommerce - Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body onload="checkAuth()">
     <div class="container">
         <header>
-            <h1>Bienvenido a todo carros</h1>
-            <div>
-                <button id="logoutButton" class="btn-secondary hidden">Cerrar Sesión</button>
-            </div>
+            <h1>Bienvenido a la Tienda</h1>
+            <button id="logoutButton" class="btn-secondary hidden"></button> 
         </header>
-        
-        <div id="adminPanel" class="hidden"> 
-            <hr>
-            <h2>Panel de Administración</h2>
-            <section id="adminFormSection" class="card p-20">
-                <h3>Agregar/Editar Producto</h3>
+
+        <section id="adminPanel" class="admin-section hidden">
+            <h2>Panel de Administración de Productos</h2>
+
+            <div id="adminFormSection" class="form-card">
+                <h3>Crear / Editar Producto</h3>
                 <form id="productForm">
-                    <input type="text" id="productId" hidden>
-                    
-                    <label for="productName">Nombre (3-50 chars):</label>
-                    <input type="text" id="productName" placeholder="Nombre" maxlength="50" required>
+                    <input type="hidden" id="productId" name="productId">
 
-                    <label for="productDescription">Descripción (5-150 chars):</label>
-                    <textarea id="productDescription" placeholder="Descripción breve del producto" maxlength="150" required></textarea>
+                    <label for="productName">Nombre:</label>
+                    <input type="text" id="productName" name="productName" required>
 
-                    <label for="productImageUrl">URL de Imagen:</label>
-                    <input type="url" id="productImageUrl" placeholder="https://ejemplo.com/imagen.jpg" required>
+                    <label for="productDescription">Descripción:</label>
+                    <textarea id="productDescription" name="productDescription" required></textarea>
+
+                    <label for="productImageUrl">URL de Imagen (Opcional):</label>
+                    <input type="text" id="productImageUrl" name="productImageUrl" placeholder="https://ejemplo.com/imagen.jpg">
 
                     <label for="productPrice">Precio:</label>
-                    <input type="number" id="productPrice" placeholder="Precio" min="0.01" step="0.01" required>
-                    
-                    <label for="productStock">Stock (0-1000):</label>
-                    <input type="number" id="productStock" placeholder="Stock" min="0" max="1000" required>
-                    
+                    <input type="number" id="productPrice" name="productPrice" min="0.01" step="0.01" required>
+
+                    <label for="productStock">Stock:</label>
+                    <input type="number" id="productStock" name="productStock" min="0" required>
+
                     <button type="submit" id="saveButton" class="btn-primary">Crear Producto</button>
+                    <p id="formMessage" class="message"></p>
                 </form>
+            </div>
 
-                <p id="formMessage" class="message"></p>
-            </section>
-
-            <hr>
-
-            <section id="adminView" class="card p-20">
-                <h3>Inventario para CRUD</h3>
-                <table id="adminTable">
+            <div class="admin-table-container">
+                <h3>Lista de Productos</h3>
+                <table>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -58,20 +53,18 @@
                         </tr>
                     </thead>
                     <tbody id="adminTableBody">
-                    </tbody>
+                        </tbody>
                 </table>
-            </section>
-        </div>
-        
-        <hr>
-
-        <section id="marketplaceView">
-            <h2>Productos Disponibles</h2>
-            <div id="productCardsContainer" class="card-grid">
             </div>
         </section>
 
+        <section id="marketplaceSection">
+            <h2>Productos Disponibles</h2>
+            <div id="productCardsContainer" class="marketplace-grid">
+                </div>
+        </section>
     </div>
+    
     <script src="scripts.js"></script>
 </body>
 </html>

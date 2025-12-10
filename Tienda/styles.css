@@ -244,3 +244,146 @@ header {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================================================
+   AJUSTES Y SECCIONES GLOBALES DEL DASHBOARD
+   ========================================================= */
+
+/* Estilos de encabezados de sección */
+.container h2 {
+    color: #007bff;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* ----------------------------------------
+   ADMIN PANEL
+---------------------------------------- */
+
+.admin-section {
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* Estilo del formulario de admin (Crear/Editar) */
+.form-card {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+}
+
+.form-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+}
+
+/* Contenedor de la tabla para scroll en móvil */
+.admin-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    padding: 10px;
+}
+
+/* Mejoras en la tabla */
+#adminTable {
+    min-width: 600px; /* Asegura que la tabla no se colapse demasiado */
+}
+
+#adminTable th {
+    background: #005fcc; /* Azul más oscuro para mejor contraste */
+    text-align: left;
+}
+
+#adminTable td {
+    vertical-align: middle;
+}
+
+/* Estilos de botones de acción de la tabla */
+.edit-button {
+    background: #ffc107; /* Amarillo */
+    color: #333;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 5px;
+    transition: background 0.2s;
+}
+
+.edit-button:hover {
+    background: #e0a800;
+}
+
+.delete-button {
+    background: #dc3545; /* Rojo */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.delete-button:hover {
+    background: #c82333;
+}
+
+/* ----------------------------------------
+   MARKETPLACE - TARJETAS DE CLIENTE
+---------------------------------------- */
+
+.marketplace-grid {
+    /* Mantenemos tu clase card-grid, pero la renombro para claridad con el HTML proporcionado */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Hago las tarjetas un poco más grandes */
+    gap: 25px; /* Más espacio entre tarjetas */
+}
+
+.product-card {
+    /* Mantengo los estilos base que definiste, añado detalles */
+    text-align: center;
+    overflow: hidden; /* Para contener la imagen */
+}
+
+.product-card img {
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 8px;
+    height: 40px; /* Altura fija para nombres de producto */
+    overflow: hidden;
+}
+
+.product-card .description {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    height: 45px; /* Altura fija para la descripción */
+    overflow: hidden;
+}
+
+.product-card .price {
+    font-size: 1.6em;
+    color: #28a745; /* Verde para el precio */
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.product-card .btn-primary {
+    width: 100%; /* Botón de compra ocupa todo el ancho */
+}
