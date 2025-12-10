@@ -1,6 +1,3 @@
-// =========================================================
-// 0. INICIALIZACIÓN DE DATOS Y ESTRUCTURAS
-// =========================================================
 
 const VALID_USERNAME = 'admin';
 const VALID_PASSWORD = 'password123';
@@ -15,9 +12,7 @@ function saveProducts() {
     localStorage.setItem('products', JSON.stringify(products));
 }
 
-// =========================================================
-// 1. LÓGICA DE ACCESO (index.html)
-// =========================================================
+
 
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
@@ -48,7 +43,7 @@ if (showLoginBtn && showRegisterBtn) {
     showRegisterBtn.addEventListener('click', () => setActiveTab(false));
 }
 
-// LÓGICA DE REGISTRO (CREATE de Usuario)
+
 if (registerForm) {
     registerForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -87,11 +82,11 @@ if (loginForm) {
 
         let userRole = null;
         
-        // 1. Intento de Login como ADMINISTRADOR
+   
         if (username === VALID_USERNAME && password === VALID_PASSWORD) {
             userRole = 'admin';
         } 
-        // 2. Intento de Login como CLIENTE
+
         else {
             const client = registeredUsers.find(u => u.username === username && u.password === password);
             if (client) {
@@ -110,25 +105,23 @@ if (loginForm) {
 }
 
 
-// =========================================================
-// 2. LÓGICA DE NAVEGACIÓN Y ROLES (dashboard.html)
-// =========================================================
+
 
 const logoutButton = document.getElementById('logoutButton');
 
-// 2.1 Verificar autenticación y asignar rol
+
 function checkAuth() {
     const isAuthenticated = localStorage.getItem('isAuthenticated');
     const userRole = localStorage.getItem('userRole');
     const adminPanel = document.getElementById('adminPanel');
 
     if (!isAuthenticated) {
-        // Redirigir a login si no hay sesión
+        
         window.location.href = 'index.html';
         return;
     }
     
-    // Asignar texto y visibilidad al botón de logout
+   
     if (logoutButton) {
         logoutButton.classList.remove('hidden');
         logoutButton.textContent = `Cerrar Sesión (${userRole === 'admin' ? 'Admin' : 'Cliente'})`;
@@ -147,7 +140,7 @@ function checkAuth() {
     renderProducts();
 }
 
-// 2.2 Logout
+
 if (logoutButton) {
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('isAuthenticated');
@@ -156,9 +149,7 @@ if (logoutButton) {
     });
 }
 
-// =========================================================
-// 3. LÓGICA CRUD DE PRODUCTOS (Solo para Admin)
-// =========================================================
+
 
 const productForm = document.getElementById('productForm');
 const saveButton = document.getElementById('saveButton');
@@ -174,7 +165,7 @@ function renderProducts() {
 
     productCardsContainer.innerHTML = '';
     
-    // Solo limpiar la tabla admin si estamos en la vista admin
+   
     if (userRole === 'admin' && adminTableBody) {
         adminTableBody.innerHTML = '';
     }
@@ -186,7 +177,7 @@ function renderProducts() {
     }
 
     products.forEach(product => {
-        // VISTA DE ADMINISTRACIÓN (Tabla para CRUD) - Solo se renderiza si es admin
+        
         if (userRole === 'admin' && adminTableBody) {
             const row = adminTableBody.insertRow();
             row.id = `product-row-${product.id}`; // ID de fila CLAVE para Selenium
@@ -349,4 +340,5 @@ function simulatePurchase(productId) {
     } else {
         alert(`❌ Lo sentimos, "${product.name}" está agotado.`);
     }
+
 }
