@@ -1,6 +1,4 @@
-/* ----------------------------------------
-   RESET Y TIPOGRAFÍA
----------------------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,9 +12,7 @@ body {
     padding: 20px;
 }
 
-/* ----------------------------------------
-   CONTENEDORES
----------------------------------------- */
+
 .container {
     max-width: 1100px;
     margin: auto;
@@ -32,9 +28,7 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
-/* ----------------------------------------
-   TABS LOGIN - REGISTER
----------------------------------------- */
+
 .tabs {
     display: flex;
     margin-bottom: 20px;
@@ -61,9 +55,7 @@ body {
     border-bottom: 3px solid #007bff;
 }
 
-/* ----------------------------------------
-   FORMULARIOS
----------------------------------------- */
+
 form {
     display: flex;
     flex-direction: column;
@@ -87,9 +79,7 @@ input:focus, textarea:focus {
     box-shadow: 0 0 8px rgba(0,123,255,0.3);
 }
 
-/* ----------------------------------------
-   BOTONES
----------------------------------------- */
+
 .btn-primary {
     background: #007bff;
     padding: 12px;
@@ -121,9 +111,7 @@ input:focus, textarea:focus {
     background: #d83a3a;
 }
 
-/* ----------------------------------------
-   MENSAJES
----------------------------------------- */
+
 .error-message {
     color: #ff3b3b;
     font-weight: 600;
@@ -134,9 +122,7 @@ input:focus, textarea:focus {
     font-weight: 600;
 }
 
-/* ----------------------------------------
-   CARD GENERAL
----------------------------------------- */
+
 .card {
     background: white;
     border-radius: 14px;
@@ -149,9 +135,7 @@ input:focus, textarea:focus {
     padding: 20px;
 }
 
-/* ----------------------------------------
-   TABLA ADMIN
----------------------------------------- */
+
 #adminTable {
     width: 100%;
     border-collapse: collapse;
@@ -173,9 +157,7 @@ input:focus, textarea:focus {
     background: #eef4ff;
 }
 
-/* ----------------------------------------
-   MARKETPLACE - CARDS
----------------------------------------- */
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -202,9 +184,7 @@ input:focus, textarea:focus {
     border-radius: 12px;
 }
 
-/* ----------------------------------------
-   HEADER
----------------------------------------- */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -212,24 +192,18 @@ header {
     margin-bottom: 25px;
 }
 
-/* ----------------------------------------
-   UTILIDADES
----------------------------------------- */
+
 .hidden {
     display: none !important;
 }
 
-/* ----------------------------------------
-   ANIMACIONES
----------------------------------------- */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(15px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ----------------------------------------
-   RESPONSIVE
----------------------------------------- */
+
 @media (max-width: 600px) {
     .access-container {
         margin: 20px;
@@ -246,11 +220,7 @@ header {
 }
 
 
-/* =========================================================
-   AJUSTES Y SECCIONES GLOBALES DEL DASHBOARD
-   ========================================================= */
 
-/* Estilos de encabezados de sección */
 .container h2 {
     color: #007bff;
     border-bottom: 2px solid #e9ecef;
@@ -260,16 +230,14 @@ header {
     font-weight: 700;
 }
 
-/* ----------------------------------------
-   ADMIN PANEL
----------------------------------------- */
+
 
 .admin-section {
     padding-top: 20px;
     border-top: 1px solid #ddd;
 }
 
-/* Estilo del formulario de admin (Crear/Editar) */
+
 .form-card {
     background: white;
     border-radius: 14px;
@@ -285,7 +253,7 @@ header {
     padding-left: 10px;
 }
 
-/* Contenedor de la tabla para scroll en móvil */
+
 .admin-table-container {
     overflow-x: auto;
     background: white;
@@ -294,13 +262,13 @@ header {
     padding: 10px;
 }
 
-/* Mejoras en la tabla */
+
 #adminTable {
-    min-width: 600px; /* Asegura que la tabla no se colapse demasiado */
+    min-width: 600px; 
 }
 
 #adminTable th {
-    background: #005fcc; /* Azul más oscuro para mejor contraste */
+    background: #005fcc; 
     text-align: left;
 }
 
@@ -308,9 +276,9 @@ header {
     vertical-align: middle;
 }
 
-/* Estilos de botones de acción de la tabla */
+
 .edit-button {
-    background: #ffc107; /* Amarillo */
+    background: #ffc107; 
     color: #333;
     border: none;
     padding: 6px 10px;
@@ -326,7 +294,7 @@ header {
 }
 
 .delete-button {
-    background: #dc3545; /* Rojo */
+    background: #dc3545; 
     color: white;
     border: none;
     padding: 6px 10px;
@@ -340,21 +308,18 @@ header {
     background: #c82333;
 }
 
-/* ----------------------------------------
-   MARKETPLACE - TARJETAS DE CLIENTE
----------------------------------------- */
 
 .marketplace-grid {
-    /* Mantenemos tu clase card-grid, pero la renombro para claridad con el HTML proporcionado */
+   
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Hago las tarjetas un poco más grandes */
-    gap: 25px; /* Más espacio entre tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
 }
 
 .product-card {
-    /* Mantengo los estilos base que definiste, añado detalles */
+   
     text-align: center;
-    overflow: hidden; /* Para contener la imagen */
+    overflow: hidden;
 }
 
 .product-card img {
@@ -365,7 +330,7 @@ header {
     font-size: 1.3em;
     color: #333;
     margin-bottom: 8px;
-    height: 40px; /* Altura fija para nombres de producto */
+    height: 40px; 
     overflow: hidden;
 }
 
@@ -373,17 +338,18 @@ header {
     color: #6c757d;
     font-size: 0.9em;
     margin-bottom: 15px;
-    height: 45px; /* Altura fija para la descripción */
+    height: 45px; 
     overflow: hidden;
 }
 
 .product-card .price {
     font-size: 1.6em;
-    color: #28a745; /* Verde para el precio */
+    color: #28a745; 
     font-weight: 700;
     margin-bottom: 15px;
 }
 
 .product-card .btn-primary {
-    width: 100%; /* Botón de compra ocupa todo el ancho */
+    width: 100%; 
+
 }
