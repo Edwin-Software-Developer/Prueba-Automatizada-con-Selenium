@@ -1,0 +1,389 @@
+/* ----------------------------------------
+   RESET Y TIPOGRAFÍA
+---------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #333;
+    padding: 20px;
+}
+
+/* ----------------------------------------
+   CONTENEDORES
+---------------------------------------- */
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.access-container {
+    max-width: 460px;
+    margin: 60px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease;
+}
+
+/* ----------------------------------------
+   TABS LOGIN - REGISTER
+---------------------------------------- */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.tab-button:hover {
+    color: #007bff;
+}
+
+.tab-button.active {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+}
+
+/* ----------------------------------------
+   FORMULARIOS
+---------------------------------------- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0,123,255,0.3);
+}
+
+/* ----------------------------------------
+   BOTONES
+---------------------------------------- */
+.btn-primary {
+    background: #007bff;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #005fcc;
+}
+
+.btn-secondary {
+    background: #ff4b4b;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #d83a3a;
+}
+
+/* ----------------------------------------
+   MENSAJES
+---------------------------------------- */
+.error-message {
+    color: #ff3b3b;
+    font-weight: 600;
+}
+
+.message {
+    color: #28a745;
+    font-weight: 600;
+}
+
+/* ----------------------------------------
+   CARD GENERAL
+---------------------------------------- */
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+/* ----------------------------------------
+   TABLA ADMIN
+---------------------------------------- */
+#adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+#adminTable th {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+#adminTable td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#adminTable tr:hover {
+    background: #eef4ff;
+}
+
+/* ----------------------------------------
+   MARKETPLACE - CARDS
+---------------------------------------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.product-card {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ----------------------------------------
+   HEADER
+---------------------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* ----------------------------------------
+   UTILIDADES
+---------------------------------------- */
+.hidden {
+    display: none !important;
+}
+
+/* ----------------------------------------
+   ANIMACIONES
+---------------------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------------------------
+   RESPONSIVE
+---------------------------------------- */
+@media (max-width: 600px) {
+    .access-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   AJUSTES Y SECCIONES GLOBALES DEL DASHBOARD
+   ========================================================= */
+
+/* Estilos de encabezados de sección */
+.container h2 {
+    color: #007bff;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* ----------------------------------------
+   ADMIN PANEL
+---------------------------------------- */
+
+.admin-section {
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* Estilo del formulario de admin (Crear/Editar) */
+.form-card {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+}
+
+.form-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+}
+
+/* Contenedor de la tabla para scroll en móvil */
+.admin-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    padding: 10px;
+}
+
+/* Mejoras en la tabla */
+#adminTable {
+    min-width: 600px; /* Asegura que la tabla no se colapse demasiado */
+}
+
+#adminTable th {
+    background: #005fcc; /* Azul más oscuro para mejor contraste */
+    text-align: left;
+}
+
+#adminTable td {
+    vertical-align: middle;
+}
+
+/* Estilos de botones de acción de la tabla */
+.edit-button {
+    background: #ffc107; /* Amarillo */
+    color: #333;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 5px;
+    transition: background 0.2s;
+}
+
+.edit-button:hover {
+    background: #e0a800;
+}
+
+.delete-button {
+    background: #dc3545; /* Rojo */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.delete-button:hover {
+    background: #c82333;
+}
+
+/* ----------------------------------------
+   MARKETPLACE - TARJETAS DE CLIENTE
+---------------------------------------- */
+
+.marketplace-grid {
+    /* Mantenemos tu clase card-grid, pero la renombro para claridad con el HTML proporcionado */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Hago las tarjetas un poco más grandes */
+    gap: 25px; /* Más espacio entre tarjetas */
+}
+
+.product-card {
+    /* Mantengo los estilos base que definiste, añado detalles */
+    text-align: center;
+    overflow: hidden; /* Para contener la imagen */
+}
+
+.product-card img {
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 8px;
+    height: 40px; /* Altura fija para nombres de producto */
+    overflow: hidden;
+}
+
+.product-card .description {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    height: 45px; /* Altura fija para la descripción */
+    overflow: hidden;
+}
+
+.product-card .price {
+    font-size: 1.6em;
+    color: #28a745; /* Verde para el precio */
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.product-card .btn-primary {
+    width: 100%; /* Botón de compra ocupa todo el ancho */
+}
