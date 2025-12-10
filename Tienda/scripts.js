@@ -309,3 +309,44 @@ function deleteProduct(id) {
 if (document.querySelector('body[onload="checkAuth()"]')) {
     checkAuth();
 }
+
+
+
+// =========================================================
+// 4. INICIALIZACIÓN Y LÓGICA DE COMPRA
+// =========================================================
+
+// Esta línea asegura que la lógica se ejecute solo en el dashboard al cargar
+if (document.querySelector('body[onload="checkAuth()"]')) {
+    checkAuth();
+}
+
+// LÓGICA DE COMPRA (Simulación)
+document.addEventListener('click', (e) => {
+    // Verifica si el clic fue en un botón con el prefijo de ID 'buy-btn-'
+    if (e.target.matches('[id^="buy-btn-"]')) {
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        simulatePurchase(productId);
+    }
+});
+
+function simulatePurchase(productId) {
+    const productIndex = products.findIndex(p => p.id === productId);
+    const product = products[productIndex];
+
+    if (!product) {
+        alert('Error: Producto no encontrado.');
+        return;
+    }
+
+    if (product.stock > 0) {
+        // Simulación: reducir el stock en 1
+        product.stock--; 
+        saveProducts();
+        renderProducts(); // Vuelve a renderizar para actualizar el stock/tarjetas
+
+        alert(`✅ Compra exitosa de "${product.name}". ¡Gracias! (Stock restante: ${product.stock})`);
+    } else {
+        alert(`❌ Lo sentimos, "${product.name}" está agotado.`);
+    }
+}
